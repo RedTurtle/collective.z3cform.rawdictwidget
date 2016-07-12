@@ -1,10 +1,10 @@
 
 from zope.schema.interfaces import IObject
 from zope.schema.interfaces import ValidationError
-from z3c.form.interfaces import IMultiWidget
+from z3c.form.interfaces import IWidget
 
 
-class IRawDictField(IMultiWidget):
+class IRawDictWidget(IWidget):
     """Grid widget."""
 
 

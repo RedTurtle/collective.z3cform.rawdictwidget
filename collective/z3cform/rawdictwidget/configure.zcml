@@ -4,5 +4,9 @@
     i18n_domain="collective.z3cform.rawdictwidget">
 
   <five:registerPackage package="." initialize=".initialize" />
-
+  <adapter
+    factory=".rawdictwidget.DictDataConverter"
+    for="zope.schema.interfaces.IDict
+    collective.z3cform.rawdictwidget.interfaces.IRawDictWidget"
+    />
 </configure>
