@@ -5,8 +5,8 @@
       tal:omit-tag="">
 <div class="multi-widget"
      tal:attributes="class view/klass">
-    
-    <textarea readonly="readonly" tal:attributes="name view/name"><span tal:condition="view/value" tal:replace="view/value"/></textarea>
+  
+    <p tal:condition="view/value" tal:replace="view/value"/>
 
 
 </div>

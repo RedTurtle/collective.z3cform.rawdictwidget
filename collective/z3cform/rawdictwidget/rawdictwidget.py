@@ -13,21 +13,20 @@ from z3c.form.converter import BaseDataConverter
 from zope.app.pagetemplate import ViewPageTemplateFile as Z3ViewPageTemplateFile
 from zope.schema.interfaces import IDict
 from interfaces import IRawDictWidget
-
 import ast
-# >>> ast.literal_eval("{'muffin' : 'lolz', 'foo' : 'kitty'}")
+
 # ------------[ Main Widget ]-----------------------------------------------
 
+
 class RawDictField(Widget):
-    """This grid should be applied to an schema.List item which has
-    schema.Object and an interface"""
+    """Is general widget that is extended"""
 
     zope.interface.implements(IRawDictWidget)
 
     display_table_css_class = "rawdictwidget-table-view"
 
     klass = "rawdictfield"
-    key_type = 'dict'
+    viewonly = True
 
     def extract(self):
         # import pdb;pdb.set_trace()
@@ -45,7 +44,7 @@ class RawDictField(Widget):
 def RawDictWidgetFactory(field, request):
     """IFieldWidget factory for DataGridField."""
     widget = FieldWidget(field, RawDictField(request))
-    widget.template = Z3ViewPageTemplateFile("templates/rawdictwidget.pt")
+    # widget.template = Z3ViewPageTemplateFile("templates/rawdictwidget_input.pt")
     return widget
 
 

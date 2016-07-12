@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
     i18n_domain="collective.z3cform.rawdictwidget">
 
   <five:registerPackage package="." initialize=".initialize" />
@@ -9,4 +10,25 @@
     for="zope.schema.interfaces.IDict
     collective.z3cform.rawdictwidget.interfaces.IRawDictWidget"
     />
+
+  <z3c:widgetTemplate
+      mode="display"
+      widget="collective.z3cform.rawdictwidget.interfaces.IRawDictWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      template="templates/rawdictwidget_display.pt"
+      />
+
+  <z3c:widgetTemplate
+      mode="input"
+      widget="collective.z3cform.rawdictwidget.interfaces.IRawDictWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      template="templates/rawdictwidget_input.pt"
+      />
+
+  <z3c:widgetTemplate
+      mode="hidden"
+      widget="collective.z3cform.rawdictwidget.interfaces.IRawDictWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      template="templates/rawdictwidget_hidden.pt"
+      />
 </configure>
