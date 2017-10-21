@@ -10,7 +10,6 @@ from z3c.form.widget import Widget
 from z3c.form import interfaces
 from z3c.form.widget import FieldWidget
 from z3c.form.converter import BaseDataConverter
-from zope.app.pagetemplate import ViewPageTemplateFile as Z3ViewPageTemplateFile
 from zope.schema.interfaces import IDict
 from interfaces import IRawDictWidget
 import ast
@@ -38,6 +37,7 @@ class RawDictField(Widget):
         """
         # import pdb;pdb.set_trace()
         self.value = self.extract()
+
 
 @zope.component.adapter(IDict)
 @zope.interface.implementer(interfaces.IFieldWidget)
